@@ -1,0 +1,113 @@
+sivakrishnayadav.d@gmail.com
+Github to gerrit for multiple Repository commit 
+To commit changes to multiple repositories at once using GitHub and Gerrit together, you can use a combination of Git submodules and Gerrit's topic branches.
+
+Here's how you can do it:
+
+Create a new repository on GitHub for your project.
+Add the existing repositories as submodules using the git submodule add command. This will allow you to include the subrepositories in the main repository as subdirectories.
+Make your changes in the submodules and commit them to their respective repositories.
+Create a new branch on the main repository and switch to it using git checkout -b <branch-name>.
+Update the submodules to their latest commits using the git submodule update command.
+Commit the changes to the main repository using git commit -m "Commit message".
+Push the changes to the main repository's branch on GitHub using git push origin <branch-name>.
+In Gerrit, create a new change request for each submodule repository with the same topic branch name as the main repository.
+Review and approve the change requests in Gerrit.
+Once all change requests are approved, merge the changes in the main repository's branch on GitHub.
+When the changes are merged into the main repository on GitHub, the submodules will be updated to the latest versions of their respective branches. This allows you to easily manage dependencies between multiple repositories and keep everything in sync.
+
+Note that this approach requires careful coordination between GitHub and Gerrit, as well as a thorough understanding of Git submodules and how they work. However, it can be a powerful way to manage complex projects with multiple interdependent repositories.
+
+
+
+
+sivakrishnayadav.d@gmail.com
+Steps to follow for pull request in github 
+To create a pull request in GitHub, you can follow these steps:
+
+Fork the repository: Go to the repository you want to contribute to and click the "Fork" button in the top-right corner of the page. This will create a copy of the repository in your GitHub account.
+
+Clone the repository: Clone the forked repository to your local machine using the "git clone" command, as described in the previous answer.
+
+Create a new branch: Create a new branch for your changes using the "git checkout" command followed by the "-b" option and the name of your new branch. For example, if you want to create a new branch called "my-feature", you can use the following command:
+
+css
+Copy code
+git checkout -b my-feature
+Make changes: Make the necessary changes to the code or files in the repository using your favorite editor or IDE.
+
+Commit changes: Once you have made the changes, use the "git add" command to stage the changes and the "git commit" command to commit them with a descriptive message. For example:
+
+sql
+Copy code
+git add .
+git commit -m "Added new feature"
+Push changes: Push your changes to your forked repository on GitHub using the "git push" command followed by the name of the remote repository and branch. For example:
+
+perl
+Copy code
+git push origin my-feature
+Create a pull request: Go to your forked repository on GitHub and click the "Compare & pull request" button next to your new branch. This will open a new page where you can review your changes, add a description, and create the pull request.
+
+Wait for review: After you create the pull request, the repository owner or other collaborators can review your changes and provide feedback or request changes. You can continue to push additional changes to your branch and they will be automatically added to the pull request.
+
+Merge the pull request: Once the pull request is approved and all conflicts are resolved, the repository owner can merge the pull request into the main branch of the repository.
+
+That's it! You have successfully created a pull request in GitHub.
+
+
+
+
+sivakrishnayadav.d@gmail.com
+steps to follow pull request in gerrit
+To create a pull request in Gerrit, you can follow these steps:
+
+Clone the repository: Clone the repository you want to contribute to from Gerrit using the "git clone" command. For example:
+
+bash
+Copy code
+git clone ssh://username@gerrit.example.com:29418/project-name
+Replace "username" with your Gerrit username, "gerrit.example.com" with the hostname or IP address of your Gerrit server, and "project-name" with the name of the project you want to contribute to.
+
+Create a new branch: Create a new branch for your changes using the "git checkout" command followed by the "-b" option and the name of your new branch. For example:
+
+css
+Copy code
+git checkout -b my-feature
+Make changes: Make the necessary changes to the code or files in the repository using your favorite editor or IDE.
+
+Commit changes: Once you have made the changes, use the "git add" command to stage the changes and the "git commit" command to commit them with a descriptive message. For example:
+
+sql
+Copy code
+git add .
+git commit -m "Added new feature"
+Push changes: Push your changes to Gerrit using the "git push" command followed by the name of the remote repository and branch. For example:
+
+ruby
+Copy code
+git push origin HEAD:refs/for/master
+This command pushes your changes to Gerrit for review. Replace "master" with the name of the branch you want to merge your changes into.
+
+Review changes: Your changes will now appear in Gerrit for review. Other members of the project can review your changes, provide feedback, and request changes.
+
+Address feedback: If feedback is requested, make the necessary changes to your code, commit the changes, and push them to Gerrit again. Gerrit will automatically update your pull request with the new changes.
+
+Merge the pull request: Once your changes have been approved and all conflicts are resolved, you can merge your changes into the main branch using the "git merge" command. For example:
+
+sql
+Copy code
+git fetch && git checkout master && git merge --ff-only refs/changes/XX/YYYYY/Z
+Replace "XX" with the change number, "YYYYY" with the patchset number, and "Z" with the change revision number.
+
+That's it! You have successfully created a pull request in Gerrit.
+
+
+
+
+
+
+
+
+
+Regenerate response
